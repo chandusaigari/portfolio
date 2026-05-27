@@ -8,21 +8,26 @@
 <style>
 :root {
   --bg:#0a0f1c;
-  --card:rgba(255,255,255,0.05);
-  --border:rgba(255,255,255,0.08);
+  --card:rgba(255,255,255,0.06);
+  --border:rgba(255,255,255,0.10);
   --text:#e5e7eb;
   --muted:#94a3b8;
   --accent:#38bdf8;
   --green:#22c55e;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
 body{
   font-family:system-ui;
   background:radial-gradient(circle at top,#0f172a,#0a0f1c);
   color:var(--text);
   scroll-behavior:smooth;
+  line-height:1.6;
 }
 
 /* NAV */
@@ -33,15 +38,15 @@ nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:12px 20px;
-  background:rgba(10,15,28,0.8);
-  backdrop-filter:blur(10px);
+  padding:14px 24px;
+  background:rgba(10,15,28,0.75);
+  backdrop-filter:blur(14px);
   border-bottom:1px solid var(--border);
 }
 
 nav a{
   color:var(--muted);
-  margin:0 10px;
+  margin:0 12px;
   text-decoration:none;
   font-size:14px;
 }
@@ -59,49 +64,55 @@ nav a:hover{color:var(--accent);}
 /* HERO */
 .hero{
   text-align:center;
-  padding:90px 20px 60px;
+  padding:110px 20px 70px;
 }
 
-.hero h1{font-size:48px;}
-.hero p{color:var(--muted);margin-top:10px;}
+.hero h1{
+  font-size:52px;
+  letter-spacing:1px;
+}
+
+.hero p{
+  color:var(--muted);
+  margin-top:10px;
+  font-size:16px;
+}
 
 .badge{
   display:inline-block;
-  margin-top:15px;
-  padding:6px 14px;
+  margin-top:18px;
+  padding:7px 16px;
   border:1px solid var(--border);
-  border-radius:20px;
+  border-radius:999px;
   color:var(--accent);
+  font-size:13px;
 }
 
 /* SECTIONS */
 section{
-  max-width:1000px;
+  max-width:1050px;
   margin:auto;
-  padding:50px 20px;
+  padding:60px 20px;
 }
 
 h2{
   border-left:3px solid var(--accent);
-  padding-left:10px;
-  margin-bottom:20px;
-}
-
-h3{
-  font-size:16px;
+  padding-left:12px;
+  margin-bottom:24px;
+  font-size:20px;
 }
 
 /* CARD */
 .card{
   background:var(--card);
   border:1px solid var(--border);
-  padding:18px;
-  border-radius:14px;
-  transition:0.3s;
+  padding:20px;
+  border-radius:16px;
+  transition:0.25s ease;
 }
 
 .card:hover{
-  transform:translateY(-5px);
+  transform:translateY(-6px);
   border-color:var(--accent);
 }
 
@@ -109,7 +120,7 @@ h3{
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:15px;
+  gap:16px;
 }
 
 /* SKILLS */
@@ -117,33 +128,28 @@ h3{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
-  margin-top:10px;
+  margin-top:12px;
 }
 
 .skill{
-  background:rgba(255,255,255,0.04);
+  background:rgba(255,255,255,0.05);
   padding:8px 12px;
   border-radius:10px;
   border:1px solid var(--border);
-  font-size:14px;
+  font-size:13px;
 }
 
-/* GITHUB */
-.stats{
-  text-align:center;
-}
-
-.stats img{
-  width:100%;
-  max-width:600px;
-  border-radius:12px;
-  margin-top:10px;
+/* IMPACT CARDS */
+.metric{
+  font-size:30px;
+  font-weight:700;
+  color:var(--accent);
 }
 
 /* CTA */
 .cta{
   text-align:center;
-  padding:60px 20px;
+  padding:70px 20px;
   border-top:1px solid var(--border);
 }
 
@@ -167,11 +173,11 @@ button{
 <!-- NAV -->
 <nav>
   <div><b>DevOps Portfolio</b></div>
-
   <div>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+    <a href="#impact">Impact</a>
     <a href="#youtube">YouTube</a>
     <a href="#contact">Contact</a>
     <a class="hire-btn" href="#contact">Hire Me</a>
@@ -181,16 +187,15 @@ button{
 <!-- HERO -->
 <div class="hero">
   <h1>SAIGARI CHANDU</h1>
-  <p>DevOps Fresher | AWS Basics | Docker | CI/CD | Linux  | Kubernetes </p>
-  <span class="badge">Open to DevOps / Cloud Engineer Roles</span>
+  <p>DevOps Engineer | AWS | Docker | CI/CD | Linux | Kubernetes | GitOps</p>
+  <span class="badge">Ready for Cloud / DevOps Engineer Roles</span>
 </div>
 
 <!-- ABOUT -->
 <section id="about">
 <h2>About</h2>
 <div class="card">
-Entry-level DevOps engineer focused on cloud infrastructure, automation, and CI/CD pipelines.
-Hands-on experience with AWS core services, Docker, Linux, Git workflows, and deployment pipelines.
+Focused DevOps engineer with hands-on experience in cloud infrastructure, CI/CD automation, containerization, and Linux environments. Strong interest in scalable systems, deployment pipelines, and infrastructure automation.
 </div>
 </section>
 
@@ -207,7 +212,7 @@ Hands-on experience with AWS core services, Docker, Linux, Git workflows, and de
 <div class="skill">Git & GitHub</div>
 <div class="skill">Docker</div>
 <div class="skill">CI/CD (GitHub Actions)</div>
-<div class="skill">Networking </div>
+<div class="skill">Networking</div>
 <div class="skill">Shell Scripting</div>
 <div class="skill">Kubernetes</div>
 <div class="skill">GitOps</div>
@@ -235,20 +240,44 @@ Hands-on experience with AWS core services, Docker, Linux, Git workflows, and de
 
 <div class="card">
 <h3>AWS Static Website</h3>
-<p>Hosted static website using AWS S3.</p>
-<a href="#">GitHub Link</a>
+<p>Deployed static website using S3 with public hosting configuration.</p>
 </div>
 
 <div class="card">
-<h3>Docker App</h3>
-<p>Containerized application using Docker.</p>
-<a href="#">GitHub Link</a>
+<h3>Docker Application</h3>
+<p>Containerized application with Docker build, run, and deployment lifecycle.</p>
 </div>
 
 <div class="card">
 <h3>CI/CD Pipeline</h3>
-<p>Automated deployment using GitHub Actions.</p>
-<a href="#">GitHub Link</a>
+<p>Automated build, test, and deploy using GitHub Actions workflows.</p>
+</div>
+
+</div>
+</section>
+
+<!-- ENGINEERING IMPACT -->
+<section id="impact">
+<h2>Engineering Impact</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Projects Delivered</h3>
+<div class="metric">3+</div>
+<p>End-to-end DevOps implementations</p>
+</div>
+
+<div class="card">
+<h3>Automation Coverage</h3>
+<div class="metric">100%</div>
+<p>CI/CD pipeline automation using GitHub Actions</p>
+</div>
+
+<div class="card">
+<h3>Cloud Exposure</h3>
+<div class="metric">AWS</div>
+<p>EC2, S3, IAM, basic networking & deployment</p>
 </div>
 
 </div>
@@ -262,36 +291,18 @@ Hands-on experience with AWS core services, Docker, Linux, Git workflows, and de
 
 <div class="card">
 <h3>CI/CD Pipeline Demo</h3>
-<p>GitHub Actions workflow demo.</p>
-
-<iframe width="100%" height="215"
+<iframe width="100%" height="220"
 src="https://www.youtube.com/embed/VIDEO_ID"
-frameborder="0"
-allowfullscreen></iframe>
-
+frameborder="0" allowfullscreen></iframe>
 </div>
 
 <div class="card">
 <h3>Docker Project Demo</h3>
-<p>Container setup and deployment.</p>
-
-<iframe width="100%" height="215"
+<iframe width="100%" height="220"
 src="https://www.youtube.com/embed/VIDEO_ID"
-frameborder="0"
-allowfullscreen></iframe>
-
+frameborder="0" allowfullscreen></iframe>
 </div>
 
-</div>
-</section>
-
-<!-- GITHUB -->
-<section>
-<h2>GITHUB ACTIVITY</h2>
-
-<div class="card stats">
-<p>checkout github contributions</p>
-<img src="https://github-readme-stats.vercel.app/api?username=chandusaigari&show_icons=true&theme=tokyonight"/>
 </div>
 </section>
 
@@ -309,8 +320,8 @@ allowfullscreen></iframe>
 
 <!-- CTA -->
 <div class="cta">
-<h2>Ready for DevOps Role</h2>
-<p>Actively seeking entry-level DevOps / Cloud Engineer opportunities.</p>
+<h2>Open to DevOps Opportunities</h2>
+<p>Actively seeking entry-level Cloud / DevOps Engineer roles</p>
 </div>
 
 </body>
