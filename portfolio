@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DevOps Portfolio</title>
+
+<style>
+:root {
+  --bg:#0a0f1c;
+  --card:rgba(255,255,255,0.05);
+  --border:rgba(255,255,255,0.08);
+  --text:#e5e7eb;
+  --muted:#94a3b8;
+  --accent:#38bdf8;
+  --green:#22c55e;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:system-ui;
+  background:radial-gradient(circle at top,#0f172a,#0a0f1c);
+  color:var(--text);
+  scroll-behavior:smooth;
+}
+
+/* NAVBAR */
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 20px;
+  background:rgba(10,15,28,0.8);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+
+nav a{
+  color:var(--muted);
+  margin:0 10px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+nav a:hover{color:var(--accent);}
+
+.hire-btn{
+  background:var(--green);
+  color:black;
+  padding:8px 14px;
+  border-radius:20px;
+  font-weight:600;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:90px 20px 60px;
+}
+
+.hero h1{font-size:48px;}
+.hero p{color:var(--muted);margin-top:10px;}
+
+.badge{
+  display:inline-block;
+  margin-top:15px;
+  padding:6px 14px;
+  border:1px solid var(--border);
+  border-radius:20px;
+  color:var(--accent);
+}
+
+/* SECTIONS */
+section{
+  max-width:1000px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+h2{
+  border-left:3px solid var(--accent);
+  padding-left:10px;
+  margin-bottom:20px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:18px;
+  border-radius:14px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:var(--accent);
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:15px;
+}
+
+/* SKILLS */
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.skill{
+  background:rgba(255,255,255,0.04);
+  padding:8px 12px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  font-size:14px;
+}
+
+/* GITHUB STATS */
+.stats{
+  text-align:center;
+}
+
+.stats img{
+  width:100%;
+  max-width:600px;
+  border-radius:12px;
+  margin-top:10px;
+}
+
+/* CTA */
+.cta{
+  text-align:center;
+  padding:60px 20px;
+  border-top:1px solid var(--border);
+}
+
+button{
+  padding:10px 16px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+.resume{
+  background:var(--accent);
+  color:black;
+  margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <div><b>DevOps Portfolio</b></div>
+
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a class="hire-btn" href="#contact">Hire Me</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Your Name</h1>
+  <p>DevOps Fresher | AWS Basics | Docker | CI/CD | Linux</p>
+  <span class="badge">Open to Fresher DevOps / Cloud Interviews</span>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About</h2>
+<div class="card">
+Entry-level DevOps engineer focused on cloud infrastructure, automation, and CI/CD pipelines.
+Hands-on experience with AWS core services, Docker, Linux environments, and Git workflows.
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2>Skills</h2>
+<div class="card skills">
+<div class="skill">AWS (EC2, S3, IAM)</div>
+<div class="skill">Linux</div>
+<div class="skill">Git & GitHub</div>
+<div class="skill">Docker</div>
+<div class="skill">CI/CD (GitHub Actions)</div>
+<div class="skill">Networking Basics</div>
+<div class="skill">Shell Scripting</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>AWS Static Website</h3>
+<p>Deployed static website using S3 with hosting configuration.</p>
+<a href="#">GitHub Link</a>
+</div>
+
+<div class="card">
+<h3>Docker App</h3>
+<p>Containerized application using Docker with image and container lifecycle.</p>
+<a href="#">GitHub Link</a>
+</div>
+
+<div class="card">
+<h3>CI/CD Pipeline</h3>
+<p>Automated build & deploy using GitHub Actions workflow.</p>
+<a href="#">GitHub Link</a>
+</div>
+
+</div>
+</section>
+
+<!-- GITHUB STATS -->
+<section>
+<h2>GitHub Activity</h2>
+<div class="card stats">
+<p>Live contribution overview</p>
+<img src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&theme=tokyonight"/>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+<div class="card">
+<p>Email: yourmail@example.com</p>
+<p>LinkedIn: your profile</p>
+
+<button class="resume">Download Resume</button>
+</div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+<h2>Ready for DevOps Opportunity</h2>
+<p>Actively seeking entry-level DevOps / Cloud Engineer roles.</p>
+</div>
+
+</body>
+</html>
