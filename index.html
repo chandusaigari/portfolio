@@ -25,7 +25,7 @@ body{
   scroll-behavior:smooth;
 }
 
-/* NAVBAR */
+/* NAV */
 nav{
   position:sticky;
   top:0;
@@ -87,6 +87,11 @@ h2{
   margin-bottom:20px;
 }
 
+h3{
+  font-size:16px;
+}
+
+/* CARD */
 .card{
   background:var(--card);
   border:1px solid var(--border);
@@ -112,6 +117,7 @@ h2{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
+  margin-top:10px;
 }
 
 .skill{
@@ -122,7 +128,7 @@ h2{
   font-size:14px;
 }
 
-/* GITHUB STATS */
+/* GITHUB */
 .stats{
   text-align:center;
 }
@@ -176,7 +182,7 @@ button{
 <div class="hero">
   <h1>Your Name</h1>
   <p>DevOps Fresher | AWS Basics | Docker | CI/CD | Linux</p>
-  <span class="badge">Open to Fresher DevOps / Cloud Interviews</span>
+  <span class="badge">Open to DevOps / Cloud Engineer Roles</span>
 </div>
 
 <!-- ABOUT -->
@@ -184,20 +190,17 @@ button{
 <h2>About</h2>
 <div class="card">
 Entry-level DevOps engineer focused on cloud infrastructure, automation, and CI/CD pipelines.
-Hands-on experience with AWS core services, Docker, Linux environments, and Git workflows.
+Hands-on experience with AWS core services, Docker, Linux, Git workflows, and deployment pipelines.
 </div>
 </section>
 
- 
-  <!-- SKILLS -->
+<!-- SKILLS -->
 <section id="skills">
 <h2>Skills</h2>
 
 <div class="card">
 
-<!-- TECHNICAL SKILLS -->
-<h3 style="margin-bottom:10px; color:var(--accent);">Technical Skills</h3>
-
+<h3 style="color:var(--accent);">Technical Skills</h3>
 <div class="skills">
 <div class="skill">AWS (EC2, S3, IAM)</div>
 <div class="skill">Linux</div>
@@ -208,9 +211,7 @@ Hands-on experience with AWS core services, Docker, Linux environments, and Git 
 <div class="skill">Shell Scripting</div>
 </div>
 
-<!-- SOFT SKILLS -->
-<h3 style="margin:20px 0 10px; color:var(--accent);">Soft Skills</h3>
-
+<h3 style="margin-top:20px; color:var(--accent);">Soft Skills</h3>
 <div class="skills">
 <div class="skill">Problem Solving</div>
 <div class="skill">Critical Thinking</div>
@@ -232,69 +233,60 @@ Hands-on experience with AWS core services, Docker, Linux environments, and Git 
 
 <div class="card">
 <h3>AWS Static Website</h3>
-<p>Deployed static website using S3 with hosting configuration.</p>
+<p>Hosted static website using AWS S3.</p>
 <a href="#">GitHub Link</a>
 </div>
 
 <div class="card">
 <h3>Docker App</h3>
-<p>Containerized application using Docker with image and container lifecycle.</p>
+<p>Containerized application using Docker.</p>
 <a href="#">GitHub Link</a>
 </div>
 
 <div class="card">
 <h3>CI/CD Pipeline</h3>
-<p>Automated build & deploy using GitHub Actions workflow.</p>
+<p>Automated deployment using GitHub Actions.</p>
 <a href="#">GitHub Link</a>
 </div>
 
 </div>
 </section>
 
-<!-- YOUTUBE SECTION -->
+<!-- YOUTUBE -->
 <section id="youtube">
-<h2>YouTube Project Demos</h2>
+<h2>YouTube Projects</h2>
 
 <div class="grid">
 
 <div class="card">
 <h3>CI/CD Pipeline Demo</h3>
-<p>GitHub Actions workflow explanation.</p>
+<p>GitHub Actions workflow demo.</p>
 
-<iframe 
-  width="100%" 
-  height="215" 
-  src="https://www.youtube.com/embed/VIDEO_ID"
-  title="YouTube video player" 
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-  allowfullscreen>
-</iframe>
+<iframe width="100%" height="215"
+src="https://www.youtube.com/embed/VIDEO_ID"
+frameborder="0"
+allowfullscreen></iframe>
 
 </div>
 
 <div class="card">
 <h3>Docker Project Demo</h3>
-<p>Container setup and deployment workflow.</p>
+<p>Container setup and deployment.</p>
 
-<iframe 
-  width="100%" 
-  height="215" 
-  src="https://www.youtube.com/embed/VIDEO_ID"
-  title="YouTube video player" 
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-  allowfullscreen>
-</iframe>
+<iframe width="100%" height="215"
+src="https://www.youtube.com/embed/VIDEO_ID"
+frameborder="0"
+allowfullscreen></iframe>
 
 </div>
 
 </div>
 </section>
 
-<!-- GITHUB STATS -->
+<!-- GITHUB -->
 <section>
 <h2>GitHub Activity</h2>
+
 <div class="card stats">
 <p>Live contribution overview</p>
 <img src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&theme=tokyonight"/>
@@ -304,6 +296,7 @@ Hands-on experience with AWS core services, Docker, Linux environments, and Git 
 <!-- CONTACT -->
 <section id="contact">
 <h2>Contact</h2>
+
 <div class="card">
 <p>Email: yourmail@example.com</p>
 <p>LinkedIn: your profile</p>
@@ -314,8 +307,8 @@ Hands-on experience with AWS core services, Docker, Linux environments, and Git 
 
 <!-- CTA -->
 <div class="cta">
-<h2>Ready for DevOps Opportunity</h2>
-<p>Actively seeking entry-level DevOps / Cloud Engineer roles.</p>
+<h2>Ready for DevOps Role</h2>
+<p>Actively seeking entry-level DevOps / Cloud Engineer opportunities.</p>
 </div>
 
 </body>
