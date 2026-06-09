@@ -1,232 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" /> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>DevOps Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevOps Engineer Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --bg:#0a0f1c;
-  --card:rgba(255,255,255,0.06);
-  --border:rgba(255,255,255,0.10);
-  --text:#e5e7eb;
-  --muted:#94a3b8;
-  --accent:#38bdf8;
-  --green:#22c55e;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-  font-family:system-ui;
-  background:radial-gradient(circle at top,#0f172a,#0a0f1c);
-  color:var(--text);
-  scroll-behavior:smooth;
-  line-height:1.6;
+    background:#000;
+    color:#fff;
+    line-height:1.7;
 }
 
-/* NAV */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
 nav{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:14px 24px;
-  background:rgba(10,15,28,0.75);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--border);
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(0,0,0,.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #222;
+    z-index:1000;
+}
+
+.nav-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+.logo{
+    font-size:1.2rem;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
 }
 
 nav a{
-  color:var(--muted);
-  margin:0 12px;
-  text-decoration:none;
-  font-size:14px;
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
 }
 
-nav a:hover{color:var(--accent);}
-
-.hire-btn{
-  background:var(--green);
-  color:black;
-  padding:8px 14px;
-  border-radius:20px;
-  font-weight:600;
+nav a:hover{
+    color:#aaa;
 }
 
-/* HERO */
 .hero{
-  text-align:center;
-  padding:110px 20px 70px;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    max-width:800px;
 }
 
 .hero h1{
-  font-size:52px;
-  letter-spacing:1px;
+    font-size:4rem;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#888;
 }
 
 .hero p{
-  color:var(--muted);
-  margin-top:10px;
-  font-size:16px;
+    font-size:1.1rem;
+    color:#bdbdbd;
+    margin-bottom:30px;
 }
 
-.badge{
-  display:inline-block;
-  margin-top:18px;
-  padding:7px 16px;
-  border:1px solid var(--border);
-  border-radius:999px;
-  color:var(--accent);
-  font-size:13px;
+.btn{
+    display:inline-block;
+    padding:14px 32px;
+    border:1px solid #fff;
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
 }
 
-/* SECTIONS */
+.btn:hover{
+    background:#fff;
+    color:#000;
+}
+
 section{
-  max-width:1050px;
-  margin:auto;
-  padding:60px 20px;
+    padding:100px 0;
 }
 
-h2{
-  border-left:3px solid var(--accent);
-  padding-left:12px;
-  margin-bottom:24px;
-  font-size:20px;
+.section-title{
+    font-size:2.5rem;
+    margin-bottom:50px;
+    border-left:4px solid #fff;
+    padding-left:15px;
 }
 
-/* CARD */
+.about{
+    background:#0a0a0a;
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.skill-card{
+    border:1px solid #222;
+    padding:25px;
+    transition:.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-5px);
+    border-color:#fff;
+}
+
+.skill-card h3{
+    margin-bottom:15px;
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
 .card{
-  background:var(--card);
-  border:1px solid var(--border);
-  padding:20px;
-  border-radius:16px;
-  transition:0.25s ease;
+    border:1px solid #222;
+    padding:30px;
+    transition:.3s;
 }
 
 .card:hover{
-  transform:translateY(-6px);
-  border-color:var(--accent);
+    border-color:#fff;
 }
 
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:16px;
+.card h3{
+    margin-bottom:15px;
 }
 
-/* SKILLS */
-.skills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:12px;
+.card p{
+    color:#bdbdbd;
+    margin-bottom:20px;
 }
 
-.skill{
-  background:rgba(255,255,255,0.05);
-  padding:8px 12px;
-  border-radius:10px;
-  border:1px solid var(--border);
-  font-size:13px;
+.card a{
+    color:#fff;
+    text-decoration:none;
+    border-bottom:1px solid #fff;
 }
 
-/* IMPACT CARDS */
-.metric{
-  font-size:30px;
-  font-weight:700;
-  color:var(--accent);
+.cert-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
 }
 
-/* CTA */
-.cta{
-  text-align:center;
-  padding:70px 20px;
-  border-top:1px solid var(--border);
+.cert-card{
+    padding:25px;
+    border:1px solid #222;
 }
 
-button{
-  padding:10px 16px;
-  border:none;
-  border-radius:20px;
-  cursor:pointer;
+.cert-card a{
+    color:white;
+    text-decoration:none;
 }
 
-.resume{
-  background:var(--accent);
-  color:black;
-  margin-top:10px;
+.contact{
+    text-align:center;
+    background:#0a0a0a;
+}
+
+.contact h2{
+    margin-bottom:20px;
+}
+
+.footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid #222;
+    color:#777;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.5rem;
+}
+
+nav ul{
+    gap:15px;
+    font-size:14px;
+}
 }
 </style>
 </head>
-
 <body>
 
-<!-- NAV -->
 <nav>
-  <div><b>CHANDU's Portfolio</b></div>
-  <div>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#impact">Impact</a>
-    <a href="#youtube">YouTube</a>
-    <a href="#contact">Contact</a>
-    <a class="hire-btn" href="#contact">Hire Me</a>
-  </div>
+<div class="container nav-content">
+<div class="logo">DEVOPS</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#certifications">Certificates</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>SAIGARI CHANDU</h1>
-  <p>DevOps Engineer | AWS | Docker | CI/CD | Linux | Kubernetes | GitOps</p>
-  <span class="badge">Ready for Cloud / DevOps Engineer Roles</span>
+<!-- HERO SECTION -->
+<section class="hero">
+<div class="container hero-content">
+
+<h1>Hi, I'm <span>Chandu Saigari</span><br>DevOps Engineer</h1>
+
+<p>
+DevOps Engineer passionate about cloud infrastructure,
+CI/CD automation, container orchestration, and Infrastructure as Code.
+Experienced with AWS, Docker, Kubernetes, Jenkins, Terraform, Linux,
+and GitHub Actions.
+</p>
+
+<a href="#projects" class="btn">View Projects</a>
+
 </div>
+</section>
 
 <!-- ABOUT -->
-<section id="about">
-<h2>About</h2>
-<div class="card">
-Focused DevOps engineer with hands-on experience in cloud infrastructure, CI/CD automation, containerization, and Linux environments. Strong interest in scalable systems, deployment pipelines, and infrastructure automation.
+<section id="about" class="about">
+<div class="container">
+
+<h2 class="section-title">About Me</h2>
+
+<p>
+I'm a DevOps Fresher with hands-on experience in Linux,
+Docker, Kubernetes, Jenkins, AWS, Terraform and GitHub Actions.
+I enjoy automating deployments, managing cloud resources,
+building CI/CD pipelines, and improving software delivery processes.
+</p>
+
 </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-<h2>Skills</h2>
+<div class="container">
 
-<div class="card">
+<h2 class="section-title">Skills</h2>
 
-<h3 style="color:var(--accent);">Technical Skills</h3>
-<div class="skills">
-<div class="skill">AWS (EC2, S3, IAM, RDS)</div>
-<div class="skill">Linux</div>
-<div class="skill">Git & GitHub</div>
-<div class="skill">Docker</div>
-<div class="skill">CI/CD (GitHub Actions)</div>
-<div class="skill">Networking</div>
-<div class="skill">Shell Scripting</div>
-<div class="skill">Kubernetes</div>
-<div class="skill">GitOps</div>
+<div class="skills-grid">
+
+<div class="skill-card">
+<h3>Cloud</h3>
+<p>AWS EC2, S3, IAM, VPC</p>
 </div>
 
-<h3 style="margin-top:20px; color:var(--accent);">Soft Skills</h3>
-<div class="skills">
-<div class="skill">Problem Solving</div>
-<div class="skill">Critical Thinking</div>
-<div class="skill">Communication</div>
-<div class="skill">Team Collaboration</div>
-<div class="skill">Time Management</div>
-<div class="skill">Adaptability</div>
-<div class="skill">Attention to Detail</div>
+<div class="skill-card">
+<h3>Containers</h3>
+<p>Docker, Kubernetes</p>
+</div>
+
+<div class="skill-card">
+<h3>CI/CD</h3>
+<p>Jenkins, GitHub Actions</p>
+</div>
+
+<div class="skill-card">
+<h3>Infrastructure as Code</h3>
+<p>Terraform, Ansible</p>
+</div>
+
+<div class="skill-card">
+<h3>Monitoring</h3>
+<p>Prometheus, Grafana</p>
+</div>
+
+<div class="skill-card">
+<h3>Operating Systems</h3>
+<p>Linux, Ubuntu, CentOS</p>
+</div>
+
+<div class="skill-card">
+<h3>Version Control</h3>
+<p>Git, GitHub</p>
+</div>
+
+<div class="skill-card">
+<h3>Scripting</h3>
+<p>Bash Shell Scripting</p>
+</div>
+
 </div>
 
 </div>
@@ -234,96 +327,116 @@ Focused DevOps engineer with hands-on experience in cloud infrastructure, CI/CD 
 
 <!-- PROJECTS -->
 <section id="projects">
-<h2>Projects</h2>
+<div class="container">
 
-<div class="grid">
+<h2 class="section-title">Projects</h2>
 
- 
-
-<div class="card">
-<h3>Docker Application</h3>
-<p>Containerized application with Docker build, run, and deployment lifecycle.</p>
-</div>
+<div class="projects-grid">
 
 <div class="card">
-<h3>CI/CD Pipeline</h3>
-<p>Automated build, test, and deploy using GitHub Actions workflows.</p>
-</div>
+<h3>3-Tier Full Stack DevOps Application</h3>
+<p>
+Implemented a complete DevOps workflow using Docker,
+Jenkins, Kubernetes, AWS and monitoring tools for a
+3-tier full stack application.
+</p>
 
-</div>
-</section>
-
-<!-- ENGINEERING IMPACT -->
-<section id="impact">
-<h2>Engineering Impact</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Projects Delivered</h3>
-<div class="metric">3+</div>
-<p>End-to-end DevOps implementations</p>
-</div>
-
-<div class="card">
-<h3>Automation Coverage</h3>
-<div class="metric">100%</div>
-<p>CI/CD pipeline automation using GitHub Actions</p>
-</div>
-
-<div class="card">
-<h3>Cloud Exposure</h3>
-<div class="metric">AWS</div>
-<p>EC2, S3, IAM, basic networking & deployment</p>
-</div>
-
-</div>
-</section>
-
-/*<!-- YOUTUBE -->
-<section id="youtube">
-<h2>YouTube Projects</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>CI/CD Pipeline Demo</h3>
-<iframe width="100%" height="220"
-src="https://www.youtube.com/embed/VIDEO_ID"
-frameborder="0" allowfullscreen></iframe>
-</div>
-
-<div class="card">
-<h3>Docker Project Demo</h3>
-<iframe width="100%" height="220"
-src="https://www.youtube.com/embed/VIDEO_ID"
-frameborder="0" allowfullscreen></iframe>
-</div>
-
-</div>
-</section>*/
-
-<!---<!-- CONTACT -->
-<section id="contact">
-<h2>Contact</h2>
-
-<div class="card">
-<p>Email: chandusaigari6@gmail.com</p>
-<p>GitHub: <a href="https://github.com/chandusaigari" target="_blank">chandusaigari</a></p>
-<p>Mobile: 7396618269</p>  
-
-<a href="resume.pdf" download="SAIGARI_CHANDU_Resume.pdf">
-  <button class="resume">Download Resume</button>
+<a href="https://github.com/chandusaigari/3-Tier-Full-Stack-DevOps-Application" target="_blank">
+GitHub Repository →
 </a>
 </div>
-</section--->
-  
 
-<!-- CTA -->
-<div class="cta">
-<h2>Open to DevOps Opportunities</h2>
-<p>Actively seeking entry-level Cloud / DevOps Engineer roles</p>
+<div class="card">
+<h3>Calculator Web Application with Kubernetes & ArgoCD</h3>
+<p>
+Containerized and deployed a calculator web application
+using Kubernetes and ArgoCD with GitOps-based deployment.
+</p>
+
+<a href="https://github.com/chandusaigari/Calculator-Web-Application-with-kubecrnetes-and-Argocd" target="_blank">
+GitHub Repository →
+</a>
 </div>
 
-</body>
-</html>
+</div>
+
+</div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+<div class="container">
+
+<h2 class="section-title">Certificates</h2>
+
+<div class="cert-grid">
+
+<div class="cert-card">
+<h3>AWS Cloud Practitioner Essentials</h3>
+<br>
+<a href="#" target="_blank">
+View Certificate →
+</a>
+</div>
+
+<div class="cert-card">
+<h3>Kubernetes Essentials</h3>
+<br>
+<a href="#" target="_blank">
+View Certificate →
+</a>
+</div>
+
+<div class="cert-card">
+<h3>Linux Administration</h3>
+<br>
+<a href="#" target="_blank">
+View Certificate →
+</a>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+<div class="container">
+
+<h2>Let's Connect</h2>
+
+<p>
+📧 Email:
+<a href="mailto:23d41a05l1.1@gmail.com">
+23d41a05l1.1@gmail.com
+</a>
+</p>
+
+<p>
+🐙 GitHub:
+<a href="https://github.com/chandusaigari" target="_blank">
+github.com/chandusaigari
+</a>
+</p>
+
+<p>
+💼 LinkedIn:
+<a href="https://www.linkedin.com/in/chandu-saigari-b4a38a415/" target="_blank">
+linkedin.com/in/chandu-saigari-b4a38a415
+</a>
+</p>
+
+<br>
+
+<a href="mailto:23d41a05l1.1@gmail.com" class="btn">
+Contact Me
+</a>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+© 2026 Chandu Saigari | Devops Fresher
+</div>
